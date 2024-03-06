@@ -1,10 +1,11 @@
-describe('Pagina de login', () => {
-    it('Preenchendo os campos do login corretamente para realizar login', () => {
-      cy.visit('http://localhost:4200/#/home')
+describe('Página de login', () => {
 
-      cy.get('[data-test="loginUserName"]').type('isabelanap')
-      cy.get('[data-test="loginPassword"]').type('isabela123')
-      
-      cy.contains('button', 'login').click();
+    beforeEach(() => {
+        cy.visit ('http://localhost:4200/#/home')
     })
-  })
+
+        it('Preencher os campos de login corretamente para realizar login', () => {
+        cy.login('isabelanap', 'isabela123')
+        })
+
+})
