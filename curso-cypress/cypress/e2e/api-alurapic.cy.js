@@ -1,5 +1,5 @@
-describe('Api Alurapic', () => {
-    it('Dados da API', () => {
+describe('Buscando dados ', () => {
+    it('Dados do usuario', () => {
         cy.request({
             method: 'POST',
             url: 'http://localhost:3000/user/login',
