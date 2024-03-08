@@ -16,7 +16,7 @@
 describe('Fotos do usuario', () => {
     const tempoEsperado = Math.random() * 50
 
-    it('Dados do usuario', () => {
+    it('Fotos do usuario', () => {
         cy.request({
             method: 'GET',
             url: 'http://localhost:3000/isabelanap/photos',
