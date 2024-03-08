@@ -1,4 +1,4 @@
- describe('Buscando dados ', () => {
+  describe('Buscando dados ', () => {
     it('Dados do usuario', () => {
         cy.request({
             method: 'POST',
@@ -11,9 +11,11 @@
             expect(res.body.id).to.be.equal(3)
         })
     })
-}) 
+})  
 
 describe('Fotos do usuario', () => {
+    const tempoEsperado = Math.random() * 50
+
     it('Dados do usuario', () => {
         cy.request({
             method: 'GET',
@@ -23,6 +25,7 @@ describe('Fotos do usuario', () => {
             expect(res.body).is.not.empty
             expect(res.body[0]).to.have.property('description')
             expect(res.body[0].description).to.be.equal('porquinho')
+            expect(res.duration).to.be.lte(tempoEsperado)
         })
     })
 })
